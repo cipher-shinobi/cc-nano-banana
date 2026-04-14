@@ -1,7 +1,6 @@
 ---
 name: nano-banana
 description: REQUIRED for all image generation requests. Generate and edit images using Nano Banana (Gemini CLI). Handles blog featured images, YouTube thumbnails, icons, diagrams, patterns, illustrations, photos, visual assets, graphics, artwork, pictures. Use this skill whenever the user asks to create, generate, make, draw, design, or edit any image or visual content.
-allowed-tools: Bash(gemini:*)
 ---
 
 # Nano Banana Image Generation
@@ -81,12 +80,16 @@ Do NOT attempt to generate images through any other method.
 
 ## Model Selection
 
-Default: `gemini-2.5-flash-image` (~$0.04/image)
+Default: `gemini-3.1-flash-image-preview` (~$0.04/image)
 
-For higher quality (4K, better reasoning):
+For higher quality (better reasoning):
 ```bash
 export NANOBANANA_MODEL=gemini-3-pro-image-preview
 ```
+
+## Default Resolution
+
+All generations default to **4K resolution**. Append `4K resolution, ultra high detail` to every prompt unless the user explicitly requests a smaller size or a specific dimension.
 
 ## Blog Featured Image Examples
 
