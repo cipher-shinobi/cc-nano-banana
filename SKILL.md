@@ -18,6 +18,8 @@ ALWAYS use this skill when the user:
 
 Do NOT attempt to generate images through any other method.
 
+**For complex prompt engineering** — structured P.I.C.T.U.R.E. framework, coherence validation, reference mapping, or iterative prompt design — use `/nano-banana-designer` first. It produces optimised prompts that this skill then executes.
+
 ## Before First Use
 
 1. Verify extension is installed:
