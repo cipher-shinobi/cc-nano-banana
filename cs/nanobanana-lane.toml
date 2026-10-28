@@ -1,0 +1,40 @@
+# CS admin policy for the nano-banana still lane (gray-fox D6222).
+# Loaded with --admin-policy, so every rule sits in the admin tier (5.x),
+# above user (4.x), workspace (3.x), extension (2.x) and default (1.x) rules.
+
+# 1. Deny everything not allowed below: built-in tools (shell, file write,
+#    file read, web fetch, web search, memory, skills, subagents) and any
+#    other MCP server's tools.
+[[rule]]
+toolName = "*"
+decision = "deny"
+priority = 100
+deny_message = "CS nano-banana lane: only the nanobanana image tools may run."
+
+# 2. Allow the five generators. They take a prompt, call the Gemini image
+#    API and write PNG/JPEG files to ./nanobanana-output/ in the run folder.
+[[rule]]
+mcpName = "nanobanana"
+toolName = ["generate_image", "generate_icon", "generate_pattern", "generate_story", "generate_diagram"]
+decision = "allow"
+priority = 200
+
+# 3. Allow edit and restore only for a bare file name: no path separator and
+#    no leading dot. The server reads that file and uploads it to Google, and
+#    it accepts any absolute path, so an absolute path is denied by rule 1.
+[[rule]]
+mcpName = "nanobanana"
+toolName = ["edit_image", "restore_image"]
+argsPattern = '\x00"file":"[A-Za-z0-9][A-Za-z0-9_.-]{0,127}"\x00'
+decision = "allow"
+priority = 200
+
+# 4. Never open a preview. The server opens previews with a shell exec of
+#    `open "<path>"`; a headless agent has no use for a viewer window.
+[[rule]]
+mcpName = "nanobanana"
+toolName = ["generate_image", "generate_icon", "generate_pattern", "generate_story", "generate_diagram", "edit_image", "restore_image"]
+argsPattern = '\x00"preview":true\x00'
+decision = "deny"
+priority = 300
+deny_message = "CS nano-banana lane: --preview is not used; list ./nanobanana-output/ instead."

@@ -1,0 +1,15 @@
+{
+  "security": {
+    "disableYoloMode": true,
+    "disableAlwaysAllow": true,
+    "environmentVariableRedaction": { "enabled": true }
+  },
+  "tools": { "core": [] },
+  "hooksConfig": { "enabled": false },
+  "skills": { "enabled": false },
+  "experimental": { "enableAgents": false },
+  "context": { "fileName": "CS-NANOBANANA-NO-PROJECT-CONTEXT.md", "discoveryMaxDirs": 1 },
+  "privacy": { "usageStatisticsEnabled": false },
+  "general": { "enableAutoUpdate": false, "enableAutoUpdateNotification": false },
+  "model": { "maxSessionTurns": 8 }
+}

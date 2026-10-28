@@ -20,38 +20,7 @@ A Claude Code skill for generating and editing images using the Gemini CLI's nan
 
 ## Installation
 
-### 1. Install the Gemini CLI
-
-```bash
-npm install -g @google/gemini-cli
-```
-
-### 2. Set your API key
-
-```bash
-export NANOBANANA_GEMINI_API_KEY="your-api-key"
-```
-
-### 3. Install the nanobanana extension
-
-```bash
-gemini extensions install https://github.com/gemini-cli-extensions/nanobanana
-```
-
-### 4. Install this skill
-
-Copy the `SKILL.md` file to your Claude Code skills directory:
-
-```bash
-mkdir -p ~/.claude/skills/nano-banana
-cp SKILL.md ~/.claude/skills/nano-banana/
-```
-
-Or clone this repository directly:
-
-```bash
-git clone https://github.com/kkoppenhaver/cc-nano-banana ~/.claude/skills/nano-banana
-```
+CS: do not follow the upstream install steps. This lane runs only through the run block in `SKILL.md`, at the pins in its frontmatter. See `CS.AK.LISA.Intel.NanoBananaTest0Fixes`.
 
 ## Usage
 
@@ -81,7 +50,6 @@ Once installed, Claude Code will automatically use this skill when you ask for i
 | Option | Description |
 |--------|-------------|
 | `--count=N` | Generate N variations (1-8) |
-| `--preview` | Auto-open generated images |
 | `--styles="style1,style2"` | Apply artistic styles |
 | `--seed=N` | Seed for reproducible results |
 
