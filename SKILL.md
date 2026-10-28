@@ -16,7 +16,7 @@ metadata:
   cs-pin: "3b136993b1218c3f3bb5d1489b3c1ecb441dc842"
   cs-tree: "b5c375ea9f948209eacf0801d63843ded13189be"
   cs-gate: "CS.AK.LISA.Intel.SkillGate.MediaLaneAlignment, D6185, D6221 and D6253; CS.AK.LISA.Intel.NanoBananaTest0Fixes, D6222 and D6241; Kage yes 2026-10-28"
-  cs-edits: "C1, C2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, N1 v2, N2 v2"
+  cs-edits: "C1, C2, E1, E2, E3, E4, E5, E6, E7, E8, E9, E10, E11, N1 v2, N2 v2"
   cs-ext-upstream: "https://github.com/gemini-cli-extensions/nanobanana"
   cs-ext-pin: "5badc5aafea8751fe059a054b629cf2d989bceb1"
   cs-ext-release: "v1.0.12 nanobanana-release.tar.gz sha256:c37b87f29c4a776e7a4d29a735aa333a05740f21a967835bfad2609a31322f39"
@@ -31,7 +31,7 @@ Generate professional images via the Gemini CLI's nanobanana extension.
 
 ## When to Use This Skill
 
-> **CS lane rule (Kage, 2026-10-06 and 2026-10-28).** GPT Image is the default still lane (`gpt-image-2.5-sunburst` via `images.edit`): design the prompt with `/chatgpt-image-designer`, execute and file a PromptObject with `/image-forge` (its provider list is `gpt-image-2` and `nano-banana-pro` today; Sunburst is not wired into it yet, so a Sunburst render runs through `images.edit` as the memory below describes). Gemini (this skill) is permitted for stills when the user names it or a brief gives a reason to switch. No Gemini comparison passes unless the Kage asks. Video is Seedance only (`/seedance-designer`), never Gemini or Veo. Media is never a 3D model. Source: memory `feedback_media_production_stills_to_seedance_no_3d`.
+> **CS lane rule (Kage, 2026-10-06 and 2026-10-28).** GPT Image is the default still lane (`gpt-image-2.5-sunburst`: `images.edit` with references, `images.generate` without): design the prompt with `/chatgpt-image-designer`, then execute and file a PromptObject with `/image-forge`, which renders `gpt-image-2.5-sunburst` by default (AK-1182; `gpt-image-2` stays permitted; image-forge's `nano-banana-pro` lane is held, F-10). Gemini (this skill) is permitted for stills when the user names it or a brief gives a reason to switch. No Gemini comparison passes unless the Kage asks. Video is Seedance only (`/seedance-designer`), never Gemini or Veo. Media is never a 3D model. Source: memory `feedback_media_production_stills_to_seedance_no_3d`.
 
 Use this skill when the user:
 - Asks for Nano Banana or Gemini image generation by name
