@@ -10,6 +10,13 @@ description: >
   Use this skill when the user names Nano Banana or Gemini, or a brief gives a
   reason to make or edit a still in Gemini. Never for video (Seedance only).
   No Gemini comparison passes unless the Kage asks.
+license: "MIT"
+metadata:
+  cs-upstream: "https://github.com/kkoppenhaver/cc-nano-banana"
+  cs-pin: "3b136993b1218c3f3bb5d1489b3c1ecb441dc842"
+  cs-tree: "b5c375ea9f948209eacf0801d63843ded13189be"
+  cs-gate: "CS.AK.LISA.Intel.SkillGate.MediaLaneAlignment, D6185 and D6221, Kage yes 2026-10-28"
+  cs-edits: "C1, C2, E1, E2"
 ---
 
 # Nano Banana Image Generation
